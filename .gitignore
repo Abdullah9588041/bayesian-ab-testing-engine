@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Results: metrics.json is a committed record of the reference run;
+# figures are committed too so the README renders on GitHub.
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

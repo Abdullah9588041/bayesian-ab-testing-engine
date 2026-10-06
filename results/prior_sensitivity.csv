@@ -1,0 +1,4 @@
+prior,prior_alpha,prior_beta,prior_mean,prob_b_beats_a,expected_loss_choose_a,expected_loss_choose_b,posterior_mean_a,posterior_mean_b,description
+uniform,1.0,1.0,0.5,1.0,0.0022168327652882943,0.0,0.0047720738314918475,0.00698890659678058,"Uniform Beta(1,1): every conversion rate equally likely a priori; adds 1 pseudo-success and 1 pseudo-failure."
+jeffreys,0.5,0.5,0.5,1.0,0.0022167682971938295,0.0,0.004771917963864166,0.006988686261058437,"Jeffreys Beta(1/2,1/2): objective, reparameterization-invariant prior for the Binomial model."
+historical,5.0,995.0,0.005,1.0,0.0022157437307834464,0.0,0.004771833908967656,0.006987577639751553,"Informative Beta(5,995): encodes past campaigns averaging ~0.5% conversion (prior mean 0.005, strength of 1000 observations)."

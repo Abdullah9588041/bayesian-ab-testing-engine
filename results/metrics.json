@@ -1,0 +1,140 @@
+{
+  "seed": 42,
+  "data": {
+    "n_days": 30,
+    "variant_a": {
+      "trials": 3177233,
+      "successes": 15161,
+      "rate": 0.0047717620961383695
+    },
+    "variant_b": {
+      "trials": 2237544,
+      "successes": 15637,
+      "rate": 0.006988465925139349
+    }
+  },
+  "bayesian_uniform_prior": {
+    "prob_b_beats_a": 1.0,
+    "expected_loss_choose_a": 0.0022168327652882943,
+    "expected_loss_choose_b": 0.0,
+    "posterior_mean_a": 0.0047720738314918475,
+    "posterior_mean_b": 0.00698890659678058,
+    "credible_interval_a": [
+      0.004696592388625003,
+      0.004848145793350791
+    ],
+    "credible_interval_b": [
+      0.006880169577258444,
+      0.007098478378701982
+    ],
+    "decision": "Choose B (test)"
+  },
+  "sequential": {
+    "days_until_decision": 3,
+    "final_decision": "stop: choose B",
+    "final_prob_b_beats_a": 1.0,
+    "final_expected_loss_b": 0.0,
+    "data_used_fraction": 0.10083240731797449
+  },
+  "frequentist": {
+    "two_proportion_ztest": {
+      "z_statistic": 33.77499922226043,
+      "p_value": 4.59330633997262e-250,
+      "diff_b_minus_a": 0.0022167038290009794,
+      "ci_lower": 0.0020838283484552285,
+      "ci_upper": 0.0023495793095467303,
+      "alternative": "two-sided"
+    },
+    "chi_square": {
+      "chi2_statistic": 1140.3586450486255,
+      "p_value": 5.588636402335659e-250,
+      "degrees_of_freedom": 1
+    }
+  },
+  "prior_sensitivity": [
+    {
+      "prior": "uniform",
+      "prior_alpha": 1.0,
+      "prior_beta": 1.0,
+      "prior_mean": 0.5,
+      "prob_b_beats_a": 1.0,
+      "expected_loss_choose_a": 0.0022168327652882943,
+      "expected_loss_choose_b": 0.0,
+      "posterior_mean_a": 0.0047720738314918475,
+      "posterior_mean_b": 0.00698890659678058
+    },
+    {
+      "prior": "jeffreys",
+      "prior_alpha": 0.5,
+      "prior_beta": 0.5,
+      "prior_mean": 0.5,
+      "prob_b_beats_a": 1.0,
+      "expected_loss_choose_a": 0.0022167682971938295,
+      "expected_loss_choose_b": 0.0,
+      "posterior_mean_a": 0.004771917963864166,
+      "posterior_mean_b": 0.006988686261058437
+    },
+    {
+      "prior": "historical",
+      "prior_alpha": 5.0,
+      "prior_beta": 995.0,
+      "prior_mean": 0.005,
+      "prob_b_beats_a": 1.0,
+      "expected_loss_choose_a": 0.0022157437307834464,
+      "expected_loss_choose_b": 0.0,
+      "posterior_mean_a": 0.004771833908967656,
+      "posterior_mean_b": 0.006987577639751553
+    }
+  ],
+  "sample_size_planning": {
+    "scenario": "detect 0.5% -> 0.7% lift, alpha=0.05",
+    "frequentist_power_80pct_n_per_variant": 23405,
+    "bayesian_assurance_target_0.8": {
+      "recommended_n_per_variant": 25000,
+      "grid": [
+        {
+          "n": 5000,
+          "assurance": 0.3725
+        },
+        {
+          "n": 10000,
+          "assurance": 0.5855
+        },
+        {
+          "n": 25000,
+          "assurance": 0.891
+        },
+        {
+          "n": 50000,
+          "assurance": 0.9935
+        },
+        {
+          "n": 100000,
+          "assurance": 1.0
+        }
+      ]
+    }
+  },
+  "peeking_simulation": {
+    "h0": {
+      "n_sims": 2000,
+      "p_a": 0.0057,
+      "p_b": 0.0057,
+      "fixed_sample_frequentist_reject_rate": 0.043,
+      "naive_peeking_frequentist_reject_rate": 0.123,
+      "bayesian_sequential_decide_b_rate": 0.172,
+      "bayesian_sequential_decide_a_rate": 0.1755,
+      "nominal_alpha": 0.05
+    },
+    "h1": {
+      "n_sims": 2000,
+      "p_a": 0.0048,
+      "p_b": 0.0069,
+      "fixed_sample_frequentist_reject_rate": 1.0,
+      "naive_peeking_frequentist_reject_rate": 0.997,
+      "bayesian_sequential_decide_b_rate": 1.0,
+      "bayesian_sequential_decide_a_rate": 0.0,
+      "nominal_alpha": 0.05
+    }
+  }
+}
